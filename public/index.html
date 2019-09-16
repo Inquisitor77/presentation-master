@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		
+		
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<!--			<section>
+					<section>
+					
+					</section>
+				</section> -->
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Assister la réflexion de la maîtrise d’ouvrage sur
+							l’évolution du Siera par le prototypage et la
+							réutilisation des services existants.
+						</h3>
+					</section>
+					<section>
+						<h3>
+							Plan
+						</h3>
+						<p class="fragment">Contexte du stage</p>
+						<p class="fragment">Des outils de maîtrise des données</p>
+						<p class="fragment">Exploration des données</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							I. Contexte du stage
+						</h3>
+					</section>
+					
+					<section>
+						<p class="">SIERA</p>
+						<p class="fragment fade-in-then-semi-out">
+							Système d’Information sur l’Emploi 
+							et les Revenus d’Activité
+						</p>
+						<p class="fragment">MOE au SNDIO</p>
+						<p class="fragment">DADS</p>
+						<p class="fragment">Déclarations Annuelles de Données Sociales</p>
+					</section>
+					<section>
+						<p class="">Changement de législation</p>
+						<p class="fragment">DSN</p>
+						<p class="fragment fade-in-then-semi-out">Déclarations Sociales Nominatives</p>
+						<p class="fragment">Création de la chaîne PIRENES</p>
+					</section>
+					<section>
+						<p class="">La chaîne PIRENES</p>
+						<p class="fragment fade-in-then-semi-out">ARC, ARTEMIS, DIANE, THESEE</p>
+						<p class="fragment fade-in-then-semi-out">Mise en production fin 2018</p>
+						<p class="fragment fade-in-then-semi-out">La suite: SIERA 2025</p>
+						<p class="fragment">Réflexion sur le futur du projet</p>
+					</section>
+					<section>
+						<p class=""><u>Deux objectifs qui se dégagent</u></p>
+						<p class="fragment fade-in-then-semi-out">Court terme: chaîne actuelle</p>
+						<p class="fragment">De nouveaux outils pour mieux maîtriser les données</p>
+						<p class="fragment fade-in-then-semi-out">Moyen terme: ajout à la chaîne</p>
+						<p class="fragment">Une nouvelle organisation des données pour l’analyse et l’exploration</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+						<h3>
+							II. Des outils de maîtrise des données
+						</h3>
+						<p class="fragment">Transfert de données entre bases</p>
+						<p class="fragment">Revenir aux fichiers sources</p>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Transfert de données entre bases
+						</h3>
+					</section>
+					<section>
+						<p class="">Un besoin de mobilité des données</p>
+						<p class="fragment">De la production vers les environnements de test</p>
+						<p class="fragment">Introduction de données en production</p>
+					</section>
+					<section>
+						<p class=""><u>Fonctionnalités d'import et d'export</u></p>
+						<p class="fragment">Intégrées aux applications</p>
+						<p class="fragment">Fonctionnement conjoint avec SAS</p>
+						<p class="fragment">Avantages: Modulaires, paramétrables, s'intègrent aux batchs</p>
+						<p class="fragment">Inconvénients: Doivent être implémentées dans les applications</p>
+					</section>
+					<section>
+						<img data-src="images/capt_export.JPG">
+					</section>
+					<section>
+						<p class=""><u>Utilitaire PasPlat (Pilotage assisté d’échange entre Plateformes)</u></p>
+						<p class="fragment">Utilitaire client lourd</p>
+						<p class="fragment">Accès à toutes les bases du SIERA</p>
+						<p class="fragment">Avantages: Simple d'utilisation, autonomie des utilisateurs</p>
+						<p class="fragment">Inconvénients: Limité en production, Interférence avec les batchs</p>
+					</section>
+					<section>
+						<img data-src="images/capt_pasplat.JPG">
+					</section>
+					<section>
+						<p class=""><u>Point sécurité</u></p>
+						<p class="fragment fade-in-then-semi-out">Accès à des données protégées</p>
+						<p class="fragment fade-in-then-semi-out">Export de données</p>
+						<p class="fragment">Pas de risque: </p>
+						<p class="fragment">Des accès déjà à disposition</p>
+						<p class="fragment">AUS (Architecture Unifiée Statistique)</p>
+					</section>
+					<section>
+						<p class="">Deux solutions qui se complètent</p>
+						<img data-src="images/diag_flux_n.jpg">
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Revenir aux fichiers sources
+						</h3>
+					</section>
+					<section>
+						<p class="">Un besoin de connaître la DSN</p>
+						<p class="fragment">Comprendre les anomalies</p>
+						<p class="fragment">Exploiter de nouvelles variables</p>
+					</section>
+					<section>
+						<p class=""><u>Utilitaire Cherche-fichier</u></p>
+						<p class="fragment">Utilitaire client lourd</p>
+						<p class="fragment">Une recherche autrement compliquée</p>
+						<p class="fragment">Avantages: Simple d'utilisation, extrait le fichier</p>
+						<p class="fragment">Inconvénients: Récupération des fichiers un par un, format tar.gz</p>
+					</section>
+					<section>
+						<img data-src="images/capt_cherche.JPG">
+					</section>
+					<section>
+						<p class=""><u>Utilitaire Extracteur de rubriques</u></p>
+						<p class="fragment">Utilitaire client lourd</p>
+						<p class="fragment">Récupération de rubriques XML</p>
+						<p class="fragment">Avantages: Extraction des données, évite un travail fastidieux</p>
+						<p class="fragment">Inconvénients: connaissance de la norme DSN, contraint par la hiérarchie XML</p>
+					</section>
+					<section>
+						<img data-src="images/capt_extract.JPG">
+					</section>
+					<section>
+						<p class=""><u>Deux solutions qui fonctionnent ensemble</u></p>
+						<p class="fragment">Récupération des fichiers</p>
+						<p class="fragment">Extraction des rubriques</p>
+						<p class="fragment">Travail sur les données</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3 class="">Une boîte à outils</h3>
+						<p class="fragment">Qui permet de mieux agir sur la chaîne actuelle</p>
+						<p class="fragment">Et offre une plus grande autonomie</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+						<h3>
+							III. Exploration des données
+						</h3>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<p class="">Les traitements structurels sont assurés</p>
+						<p class="fragment">Apparition de trois nouvelles missions pour la chaîne PIRENES:</p>
+						<p class="fragment">-Permettre une analyse à la réception des données</p>
+						<p class="fragment">-Apurer les données au fil de l'eau</p>
+						<p class="fragment">-Fournir des statistiques conjoncturelles trimestrielles</p>
+					</section>
+					<section>
+						<p class=""><u>Contraintes</u></p>
+						<p class="fragment">Entrepôt de données mono-source</p>
+						<p class="fragment">Peu d'utilisateurs finaux</p>
+						<p class="fragment">Solutions open source</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<p class=""><u>Une solution OLAP</u></p>
+						<p class="fragment">Analyse mutidimensionnelle</p>
+						<p class="fragment">Informatique décisionnelle</p>
+						<p class="fragment">Organisation des données spécifique</p>
+					</section>
+					<section>
+						<p class=""><u>Une solution qui conviendrait?</u></p>
+						<p class="fragment">Analyse de plusieurs axes et zoom</p>
+						<p class="fragment">Il existe des solutions open source</p>
+						<p class="fragment">Ne demanderait pas d'adaptation de la production</p>
+					</section>
+					<section>
+						<p class=""><u>Les principaux concepts d'une solution OLAP</u></p>
+						<p class="fragment">Modèle de données décisionnel (en étoile)</p>
+						<p class="fragment">Cube OLAP</p>
+						<p class="fragment">Language MDX</p>
+						<p class="fragment">MOLAP Vs ROLAP</p>
+					</section>
+					<section>
+						<p class=""><u>Des essais précédents à l'Insee</u></p>
+						<p class="fragment">EDL (Entrepôt de Données Localisées)</p>
+						<p class="fragment">SAS-OLAP puis Mondrian-Saïku</p>
+						<p class="fragment">PELICAN 2 (Programme d’ELaboration Informatisée des Comptes Annuels Nationaux)</p>
+						<p class="fragment">Oracle-OLAP</p>
+						<p class="fragment">PACMAN (Projet d’Analyse des CoMptes Annuel Nationaux)</p>
+						<p class="fragment">Jedox, puis solution interne</p>
+					</section>
+					<section>
+						<p class=""><u>Notre choix</u></p>
+						<p class="fragment">Rester sur une solution open source</p>
+						<p class="fragment">Privilégier PostgreSql</p>
+						<p class="fragment">Des besoins assez simples</p>
+						<p class="fragment"><b>Mondrian</b></p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Travail préparatoire
+						</h3>
+					</section>
+					<section>
+						<img data-src="images/diag_etoile.png">
+					</section>
+					<section>
+						<p class=""><u>Le cube OLAP</u></p>
+						<p class="fragment">Un fichier XML complexe</p>
+						<p class="fragment">Mesures, dimensions et hiérarchies</p>
+						<p class="fragment">Logiciel Schema Workbench</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Essai avec Pentaho-Mondrian
+						</h3>
+					</section>
+					<section>
+						<p class=""><u>Pentaho-Mondrian</u></p>
+						<p class="fragment">Une solution open source</p>
+						<p class="fragment">Clé en main</p>
+						<p class="fragment">Pivot4J</p>
+					</section>
+					<section>
+						<img data-src="images/Mondrian.png">
+					</section>
+					<section>
+						<img data-src="images/capt_pivot4j.JPG">
+					</section>
+					<section>
+						<p class=""><u>Un premier prototype</u></p>
+						<p class="fragment">Une solution simple et rapide</p>
+						<p class="fragment">Qui permet l'affichage de tables bidimensionnelles</p>
+						<p class="fragment">Mais n'est pas intégrable tel quel dans notre chaîne applicative</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Réalisation d'un prototype
+						</h3>
+					</section>
+					<section>
+						<p class=""><u>Back-office</u></p>
+						<p class="fragment">Un web-service</p>
+						<p class="fragment">Qui utilise l'API Olap4J</p>
+						<p class="fragment">Pour renvoyer un résultat au format Json</p>
+					</section>
+					<section>
+						<p class=""><u>Front-office</u></p>
+						<p class="fragment">Une application ReactJS</p>
+						<p class="fragment">Envoie la requête au web-service</p>
+						<p class="fragment">Affiche le résultat pour lecture par l'utilisateur</p>
+					</section>
+					<section>
+						<img data-src="images/capt_react.JPG">
+					</section>
+					<section>
+						<p class="">Une solution intégrée et fonctionnelle</p>
+						<p class="fragment">Mais perfectible:</p>
+						<p class="fragment">-Une interface d'édition de requête</p>
+						<p class="fragment">-Amélioration des performances</p>
+						<p class="fragment">-Mise à jour des données</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Pistes d'amélioration
+						</h3>
+					</section>
+					<section>
+						<p class=""><u>Performances</u></p>
+						<p class="fragment">Partitionnement</p>
+						<p class="fragment">Pré-agrégation</p>
+						<p class="fragment">Granularité des données</p>
+						<p class="fragment">Des solutions qui peuvent être combinées</p>
+					</section>
+					<section>
+						<p class=""><u>Mise à jour des données</u></p>
+						<p class="fragment">Comment mettre à jour les données efficacement</p>
+						<p class="fragment">Mise en place des corrections</p>
+						<p class="fragment">Interruption possible des requêtes lors de la mise à jour</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Conclusions
+						</h3>
+						<p class="fragment">Des objectifs atteints</p>
+						<p class="fragment">Une utilité immédiate</p>
+						<p class="fragment">Une expérience personnelle</p>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Merci de votre attention
+						</h3>
+					</section>
+				</section>
+				<!-- Colonne -->
+				<section>
+					<section>
+						<h3>
+							Annexes
+						</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p class="" ><u>Exemple de requête MDX</u></p>
+						<font size="4" style="text-align:left;">
+						<p class="">WITH</p>
+						<p class="">MEMBER [Measures].[PourcentageH] AS ’([personne.hieracrchy sexe].[1]) / ([Measures].[Effectifpourcentage])’</p>
+						<p class="">MEMBER [Measures].[PourcentageF] AS ’([personne.hierarchy sexe].[2]) / ([Measures].[Effectifpourcentage])’</p>
+						<p class="">SELECT</p>
+						<p class="">{[Measures].[PourcentageH], [Measures].[PourcentageF]}</p>
+						<p class="">ON COLUMNS,</p>
+						<p class="">Hierarchize(Union({[apet.hierarchy apet].[All Apet]}, [apet.hierarchy apet].[All Apet].Children))</p>
+						<p class="">ON ROWS</p>
+						<p class="">FROM [Comptages]</p>
+						<p class="">WHERE [temps.hierarchy temps].[2017-10]</p>	
+						</font>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				slideNumber: "c",
+				controlsLayout: 'edges',
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
